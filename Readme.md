@@ -1,11 +1,12 @@
-## Spring Boot, PostgreSQL, JPA, REST API Demo
+## Spring Boot, PostgreSQL, JPA, REST API
 
-## Tutorial
-
-
-[Spring Boot, PostgreSQL, JPA, RESTful CRUD API Example](https://www.callicoder.com/spring-boot-jpa-hibernate-postgresql-restful-crud-api-example/)
-
-## Steps to Setup
+## TODO List
+Ödeme Şekilleri
+Puanlama
+Resim
+ProdOfrGrup
+ProdOfr aciklama
+ProdChar checkbox
 
 **1. Clone the repository**
 
