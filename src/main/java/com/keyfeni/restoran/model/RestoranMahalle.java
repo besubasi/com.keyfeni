@@ -11,8 +11,8 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "PAKET_ADRES")
-public class PaketAdres extends BaseEntity {
+@Table(name = "RESTORAN_MAHALLE")
+public class RestoranMahalle extends BaseEntity {
 
     private Long id;
     private Sehir sehir;
@@ -20,12 +20,11 @@ public class PaketAdres extends BaseEntity {
     private Mahalle mahalle;
     private Integer minimum;
 
-
     @Id
-    @GeneratedValue(generator = "paket_adres_generator")
+    @GeneratedValue(generator = "restoran_mahalle_generator")
     @SequenceGenerator(
-            name = "paket_adres_generator",
-            sequenceName = "paket_adres_seq",
+            name = "restoran_mahalle_generator",
+            sequenceName = "restoran_mahalle_seq",
             initialValue = 1
     )
     public Long getId() {
