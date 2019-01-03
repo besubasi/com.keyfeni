@@ -1,10 +1,10 @@
 package com.keyfeni.restoran.model;
 
-import com.keyfeni.common.model.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.keyfeni.adres.model.Ilce;
 import com.keyfeni.adres.model.Mahalle;
 import com.keyfeni.adres.model.Sehir;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.keyfeni.common.model.BaseEntity;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -14,26 +14,10 @@ import javax.persistence.*;
 @Table(name = "RESTORAN_MAHALLE")
 public class RestoranMahalle extends BaseEntity {
 
-    private Long id;
     private Sehir sehir;
     private Ilce ilce;
     private Mahalle mahalle;
     private Integer minimum;
-
-    @Id
-    @GeneratedValue(generator = "restoran_mahalle_generator")
-    @SequenceGenerator(
-            name = "restoran_mahalle_generator",
-            sequenceName = "restoran_mahalle_seq",
-            initialValue = 1
-    )
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "SEHIR_ID", nullable = false)

@@ -3,33 +3,20 @@ package com.keyfeni.siparis.model;
 
 import com.keyfeni.common.model.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Entity
 @Table(name = "SIPARIS")
 public class Siparis extends BaseEntity {
 
-    private Long id;
     private Long kullaniciId;
     private Long kullaniciAdresId;
     private Long restoranId;
     private Date date;
-
-    @Id
-    @GeneratedValue(generator = "siparis_generator")
-    @SequenceGenerator(
-            name = "siparis_generator",
-            sequenceName = "siparis_seq",
-            initialValue = 1
-    )
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getKullaniciId() {
         return kullaniciId;

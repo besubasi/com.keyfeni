@@ -2,30 +2,32 @@ package com.keyfeni.siparis.model;
 
 import com.keyfeni.common.model.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "PROD")
 public class Prod extends BaseEntity {
 
-    private Long id;
+    private Long siparisId;
+    private Long kullaniciId;
     private Long prodOfrId;
+    private String name;
 
-
-
-    @Id
-    @GeneratedValue(generator = "prod_generator")
-    @SequenceGenerator(
-            name = "prod_generator",
-            sequenceName = "prod_seq",
-            initialValue = 1
-    )
-    public Long getId() {
-        return id;
+    public Long getSiparisId() {
+        return siparisId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setSiparisId(Long siparisId) {
+        this.siparisId = siparisId;
+    }
+
+    public Long getKullaniciId() {
+        return kullaniciId;
+    }
+
+    public void setKullaniciId(Long kullaniciId) {
+        this.kullaniciId = kullaniciId;
     }
 
     public Long getProdOfrId() {
@@ -34,5 +36,13 @@ public class Prod extends BaseEntity {
 
     public void setProdOfrId(Long prodOfrId) {
         this.prodOfrId = prodOfrId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

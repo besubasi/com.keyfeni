@@ -1,11 +1,10 @@
 package com.keyfeni.kullanici.model;
 
-
-import com.keyfeni.common.model.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.keyfeni.adres.model.Ilce;
 import com.keyfeni.adres.model.Mahalle;
 import com.keyfeni.adres.model.Sehir;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.keyfeni.common.model.BaseEntity;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -15,7 +14,6 @@ import javax.persistence.*;
 @Table(name = "KULLANICI_ADRES")
 public class KullaniciAdres extends BaseEntity {
 
-    private Long id;
     private Long kullaniciId;
     private Sehir sehir;
     private Ilce ilce;
@@ -24,27 +22,10 @@ public class KullaniciAdres extends BaseEntity {
     private String adres;
 
 
-    @Id
-    @GeneratedValue(generator = "kullanici_adres_generator")
-    @SequenceGenerator(
-            name = "kullanici_adres_generator",
-            sequenceName = "kullanici_adres_seq",
-            initialValue = 1
-    )
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
     @Column(name = "KULLANICI_ID")
     public Long getKullaniciId() {
         return kullaniciId;
     }
-
 
     public void setKullaniciId(Long kullaniciId) {
         this.kullaniciId = kullaniciId;

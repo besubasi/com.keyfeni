@@ -2,34 +2,21 @@ package com.keyfeni.restoran.model;
 
 import com.keyfeni.common.model.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "RESTORAN")
 public class Restoran extends BaseEntity {
 
-    private Long id;
     private String name;
     private String email;
     private String password;
+    private String aciklama;
+
     // TODO: açılış kapanış saati olsun.
     // TODO: aktif pasif olsun manuel açıp kapatabilsin
 
-
-    @Id
-    @GeneratedValue(generator = "restoran_generator")
-    @SequenceGenerator(
-            name = "restoran_generator",
-            sequenceName = "restoran_seq",
-            initialValue = 1
-    )
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -53,5 +40,13 @@ public class Restoran extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAciklama() {
+        return aciklama;
+    }
+
+    public void setAciklama(String aciklama) {
+        this.aciklama = aciklama;
     }
 }

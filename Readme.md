@@ -1,12 +1,8 @@
 ## Spring Boot, PostgreSQL, JPA, REST API
 
 ## TODO List
-Ödeme Şekilleri
 Puanlama
 Resim
-ProdOfrGrup
-ProdOfr aciklama
-ProdChar checkbox
 
 **1. Clone the repository**
 

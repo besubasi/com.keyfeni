@@ -3,34 +3,27 @@ package com.keyfeni.restoran.model;
 
 import com.keyfeni.common.model.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "PROD_OFR")
 public class ProdOfr extends BaseEntity {
 
-    private Long id;
+    private Long prodOfrGrupId;
     private Long restoranId; // TODO: bu mantık düşünülecek
     private String name;
+    private String aciklama;
     private Double price;
 
-
-    @Id
-    @GeneratedValue(generator = "prod_ofr_generator")
-    @SequenceGenerator(
-            name = "prod_ofr_generator",
-            sequenceName = "prod_ofr_seq",
-            initialValue = 1
-    )
-    public Long getId() {
-        return id;
+    public Long getProdOfrGrupId() {
+        return prodOfrGrupId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProdOfrGrupId(Long prodOfrGrupId) {
+        this.prodOfrGrupId = prodOfrGrupId;
     }
 
-    @Column(name = "RESTORAN_ID")
     public Long getRestoranId() {
         return restoranId;
     }
@@ -45,6 +38,14 @@ public class ProdOfr extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAciklama() {
+        return aciklama;
+    }
+
+    public void setAciklama(String aciklama) {
+        this.aciklama = aciklama;
     }
 
     public Double getPrice() {
