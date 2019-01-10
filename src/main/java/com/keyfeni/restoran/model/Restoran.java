@@ -9,21 +9,23 @@ import javax.persistence.Table;
 @Table(name = "RESTORAN")
 public class Restoran extends BaseEntity {
 
-    private String name;
     private String email;
     private String password;
+    private String name;
     private String aciklama;
 
     // TODO: açılış kapanış saati olsun.
     // TODO: aktif pasif olsun manuel açıp kapatabilsin
 
 
-    public String getName() {
-        return name;
+    public Restoran() {
     }
 
-    public void setName(String name) {
+    public Restoran(String email, String password, String name, String aciklama) {
+        this.email = email;
+        this.password = password;
         this.name = name;
+        this.aciklama = aciklama;
     }
 
     public String getEmail() {
@@ -42,11 +44,30 @@ public class Restoran extends BaseEntity {
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getAciklama() {
         return aciklama;
     }
 
     public void setAciklama(String aciklama) {
         this.aciklama = aciklama;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Restoran{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", aciklama='" + aciklama + '\'' +
+                '}';
     }
 }
