@@ -1,6 +1,6 @@
-package com.keyfeni.siparis.repository;
+package com.keyfeni.prod.repository;
 
-import com.keyfeni.siparis.model.ProdCharVal;
+import com.keyfeni.prod.model.ProdCharVal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

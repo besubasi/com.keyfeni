@@ -8,12 +8,11 @@ import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MAHALLE")
-public class Mahalle extends BaseEntity {
+@Table(name = "SEMT")
+public class Semt extends BaseEntity {
 
     private Sehir sehir;
     private Ilce ilce;
-    private Semt semt;
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -28,6 +27,7 @@ public class Mahalle extends BaseEntity {
         this.sehir = sehir;
     }
 
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ILCE_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -40,19 +40,6 @@ public class Mahalle extends BaseEntity {
         this.ilce = ilce;
     }
 
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "SEMT_ID", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    public Semt getSemt() {
-        return semt;
-    }
-
-    public void setSemt(Semt semt) {
-        this.semt = semt;
-    }
-
     public String getName() {
         return name;
     }
@@ -60,6 +47,4 @@ public class Mahalle extends BaseEntity {
     public void setName(String name) {
         this.name = name;
     }
-
 }
-

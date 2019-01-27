@@ -2,6 +2,7 @@ package com.keyfeni.restoran.model;
 
 import com.keyfeni.common.model.BaseEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -16,6 +17,7 @@ public class ProdOfrCharVal extends BaseEntity {
     private Boolean isDefaultVal;
 
 
+    @Column(name = "PROD_OFR_ID", nullable = false)
     public Long getProdOfrId() {
         return prodOfrId;
     }
@@ -24,6 +26,7 @@ public class ProdOfrCharVal extends BaseEntity {
         this.prodOfrId = prodOfrId;
     }
 
+    @Column(name = "PROD_OFR_CHAR_ID", nullable = false)
     public Long getProdOfrCharId() {
         return prodOfrCharId;
     }

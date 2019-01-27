@@ -1,30 +1,40 @@
 package com.keyfeni.restoran.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.keyfeni.common.model.BaseEntity;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "RESTORAN_ODEME_SEKLI")
 public class RestoranOdemeSekli extends BaseEntity {
 
-    private Long restoranId;
-    private Long odemeSekliId;
+    private Restoran restoran;
+    private OdemeSekli odemeSekli;
 
-    public Long getRestoranId() {
-        return restoranId;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "RESTORAN_ID", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    public Restoran getRestoran() {
+        return restoran;
     }
 
-    public void setRestoranId(Long restoranId) {
-        this.restoranId = restoranId;
+    public void setRestoran(Restoran restoran) {
+        this.restoran = restoran;
     }
 
-    public Long getOdemeSekliId() {
-        return odemeSekliId;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ODEME_SEKLI_ID", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    public OdemeSekli getOdemeSekli() {
+        return odemeSekli;
     }
 
-    public void setOdemeSekliId(Long odemeSekliId) {
-        this.odemeSekliId = odemeSekliId;
+    public void setOdemeSekli(OdemeSekli restoran) {
+        this.odemeSekli = odemeSekli;
     }
 }

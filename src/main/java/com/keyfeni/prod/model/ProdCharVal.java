@@ -1,7 +1,8 @@
-package com.keyfeni.siparis.model;
+package com.keyfeni.prod.model;
 
 import com.keyfeni.common.model.BaseEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,6 +15,7 @@ public class ProdCharVal extends BaseEntity {
     private String val;
     private Double price;
 
+    @Column(name = "PROD_ID" , nullable = false)
     public Long getProdId() {
         return prodId;
     }
@@ -22,6 +24,7 @@ public class ProdCharVal extends BaseEntity {
         this.prodId = prodId;
     }
 
+    @Column(name = "PROD_CHAR_ID" , nullable = false)
     public Long getProdCharId() {
         return prodCharId;
     }

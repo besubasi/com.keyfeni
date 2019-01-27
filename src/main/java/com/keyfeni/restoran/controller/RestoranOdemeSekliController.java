@@ -35,7 +35,7 @@ public class RestoranOdemeSekliController {
                                                        @Valid @RequestBody RestoranOdemeSekli restoranOdemeSekliRequest) {
         return restoranOdemeSekliRepository.findById(restoranOdemeSekliId)
                 .map(restoranOdemeSekli -> {
-                    restoranOdemeSekli.setOdemeSekliId(restoranOdemeSekliRequest.getOdemeSekliId());
+                    restoranOdemeSekli.setOdemeSekli(restoranOdemeSekliRequest.getOdemeSekli());
                     return restoranOdemeSekliRepository.save(restoranOdemeSekli);
                 }).orElseThrow(() -> new ResourceNotFoundException("RestoranOdemeSekli not found with id " + restoranOdemeSekliId));
     }

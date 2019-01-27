@@ -33,7 +33,7 @@ public class RestoranMahalleController {
                                             @Valid @RequestBody RestoranMahalle restoranMahalleRequest) {
         return restoranMahalleRepository.findById(restoranMahalleId)
                 .map(restoranMahalle -> {
-                    restoranMahalle.setMinimum(restoranMahalleRequest.getMinimum());
+                    restoranMahalle.setMinimumTutar(restoranMahalleRequest.getMinimumTutar());
                     return restoranMahalleRepository.save(restoranMahalle);
                 }).orElseThrow(() -> new ResourceNotFoundException("RestoranMahalle not found with id " + restoranMahalleId));
     }

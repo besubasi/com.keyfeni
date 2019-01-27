@@ -1,9 +1,9 @@
-package com.keyfeni.siparis.controller;
+package com.keyfeni.prod.controller;
 
 
 import com.keyfeni.common.exception.ResourceNotFoundException;
-import com.keyfeni.siparis.model.ProdCharVal;
-import com.keyfeni.siparis.repository.ProdCharValRepository;
+import com.keyfeni.prod.model.ProdCharVal;
+import com.keyfeni.prod.repository.ProdCharValRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.keyfeni.adres.model.Ilce;
 import com.keyfeni.adres.model.Mahalle;
 import com.keyfeni.adres.model.Sehir;
+import com.keyfeni.adres.model.Semt;
 import com.keyfeni.common.model.BaseEntity;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -17,6 +18,7 @@ public class KullaniciAdres extends BaseEntity {
     private Long kullaniciId;
     private Sehir sehir;
     private Ilce ilce;
+    private Semt semt;
     private Mahalle mahalle;
     private String name;
     private String adres;
@@ -53,6 +55,19 @@ public class KullaniciAdres extends BaseEntity {
 
     public void setIlce(Ilce ilce) {
         this.ilce = ilce;
+    }
+
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "SEMT_ID", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    public Semt getSemt() {
+        return semt;
+    }
+
+    public void setSemt(Semt semt) {
+        this.semt = semt;
     }
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -12,7 +12,8 @@ import javax.persistence.Table;
 public class ProdOfrGrup extends BaseEntity {
 
     private String name;
-    private Long restoranId; // TODO: bu mantık düşünülecek
+    private Long restoranId;
+    private Long mutfakId;
 
     public String getName() {
         return name;
@@ -29,5 +30,15 @@ public class ProdOfrGrup extends BaseEntity {
 
     public void setRestoranId(Long restoranId) {
         this.restoranId = restoranId;
+    }
+
+
+    @Column(name = "MUTFAK_ID")
+    public Long getMutfakId() {
+        return mutfakId;
+    }
+
+    public void setMutfakId(Long mutfakId) {
+        this.mutfakId = mutfakId;
     }
 }

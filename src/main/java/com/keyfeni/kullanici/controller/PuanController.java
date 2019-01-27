@@ -1,9 +1,9 @@
-package com.keyfeni.siparis.controller;
+package com.keyfeni.kullanici.controller;
 
 
 import com.keyfeni.common.exception.ResourceNotFoundException;
-import com.keyfeni.siparis.model.Puan;
-import com.keyfeni.siparis.repository.PuanRepository;
+import com.keyfeni.kullanici.model.Puan;
+import com.keyfeni.kullanici.repository.PuanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,9 +1,9 @@
 package com.keyfeni.adres.controller;
 
-import com.keyfeni.common.exception.ResourceNotFoundException;
 import com.keyfeni.adres.model.Mahalle;
 import com.keyfeni.adres.repository.IlceRepository;
 import com.keyfeni.adres.repository.MahalleRepository;
+import com.keyfeni.common.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

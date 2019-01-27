@@ -16,7 +16,7 @@ public class ProdOfrChar extends BaseEntity {
     private Boolean isChecbox;
     private Boolean isChecked;
 
-    @Column(name = "PROD_OFR_ID")
+    @Column(name = "PROD_OFR_ID", nullable = false)
     public Long getProdOfrId() {
         return prodOfrId;
     }

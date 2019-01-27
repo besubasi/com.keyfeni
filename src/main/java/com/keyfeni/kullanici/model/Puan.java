@@ -1,4 +1,4 @@
-package com.keyfeni.siparis.model;
+package com.keyfeni.kullanici.model;
 
 import com.keyfeni.common.enums.EnumPuanTuru;
 import com.keyfeni.common.model.BaseEntity;
@@ -11,12 +11,12 @@ public class Puan extends BaseEntity {
 
     private Long kullaniciId;
     private Long restoranId;
-    private Long siparisId; // siparis yada yemek
     private Long prodOfrId;
     private String yorum;
-    private EnumPuanTuru puanTuru; // TODO enum olacak
+    private EnumPuanTuru puanTuru;
     private short puan;
 
+    @Column(name = "KULLANICI_ID", nullable = false)
     public Long getKullaniciId() {
         return kullaniciId;
     }
@@ -25,6 +25,7 @@ public class Puan extends BaseEntity {
         this.kullaniciId = kullaniciId;
     }
 
+    @Column(name = "RESTORAN_ID", nullable = false)
     public Long getRestoranId() {
         return restoranId;
     }
@@ -33,14 +34,7 @@ public class Puan extends BaseEntity {
         this.restoranId = restoranId;
     }
 
-    public Long getSiparisId() {
-        return siparisId;
-    }
-
-    public void setSiparisId(Long siparisId) {
-        this.siparisId = siparisId;
-    }
-
+    @Column(name = "PROD_OFR__ID", nullable = false)
     public Long getProdOfrId() {
         return prodOfrId;
     }
@@ -49,7 +43,7 @@ public class Puan extends BaseEntity {
         this.prodOfrId = prodOfrId;
     }
 
-    @Column(name = "yorum", length = 4000 )
+    @Column(name = "YORUM", length = 4000 )
     public String getYorum() {
         return yorum;
     }
